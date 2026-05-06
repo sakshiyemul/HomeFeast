@@ -1,0 +1,17 @@
+const express = require("express");
+const router = express.Router();
+const adminController = require("../controllers/adminController");
+const complaintController = require("../controllers/complaintController");
+const cookController = require("../controllers/cookController");
+const { protect, authorizeRoles } = require("../middleware/authMiddleware");
+router.get("/overview", protect, authorizeRoles("admin"), adminController.overview);
+router.get("/users", protect, authorizeRoles("admin"), adminController.listUsers);
+router.patch("/users/:id", protect, authorizeRoles("admin"), adminController.updateUser);
+router.delete("/users/:id", protect, authorizeRoles("admin"), adminController.deleteUser);
+router.get("/cooks", protect, authorizeRoles("admin"), adminController.listCooks);
+router.patch("/approve-cook/:id", protect, authorizeRoles("admin"), cookController.setApproval);
+router.get("/orders", protect, authorizeRoles("admin"), adminController.listOrders);
+router.get("/subscriptions", protect, authorizeRoles("admin"), adminController.listSubscriptions);
+router.get("/complaints", protect, authorizeRoles("admin"), adminController.listComplaints);
+router.patch("/complaints/:id", protect, authorizeRoles("admin"), complaintController.updateStatus);
+module.exports = router;
