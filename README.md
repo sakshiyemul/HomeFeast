@@ -26,6 +26,8 @@ HomeFeast is a full-stack Homemade Food Delivery web application that connects u
  Admin Login Authentication
  Approve / Reject Cooks
  Manage Categories & Cuisines
+
+
  Manage Users & Orders
  Handle Complaints & Reviews
  Dashboard Analytics
@@ -35,3 +37,8 @@ HomeFeast is a full-stack Homemade Food Delivery web application that connects u
  Email: admin@homefeast.com
  Password: homefeast@123
 
+backend:-
+https://homefeast-backend.onrender.com
+
+frontend:-
+https://home-feast-tau.vercel.app/
